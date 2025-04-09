@@ -3,7 +3,7 @@ import axios from 'axios'
 import toast from 'react-hot-toast';
 
 //base url will be dynamic depending on the enviromnnent
-const BASE_URL = "https://postgrestore-backend.onrender.com"
+const BASE_URL = import.meta.env.MODE === "development" ? 'http://localhost:3000' : "https://postgrestore-backend.onrender.com"
 
 export const useProductStore = create((set, get) => ({
     products: [],
